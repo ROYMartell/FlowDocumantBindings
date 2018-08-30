@@ -1,0 +1,29 @@
+﻿<Window x:Class="Sample.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+    Title="Window1" Height="400" Width="800" x:Name="MainWindow" diag:PresentationTraceSources.TraceLevel="High">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <Button Click="Button_Click" Padding="5" Margin="15">Prepare XPS</Button>
+            <TextBox Padding="10,10,10,0">Header Height</TextBox>
+            <TextBox Name="hh" Text="20"/>
+            <TextBox Padding="10,10,10,0">Footer Height</TextBox>
+            <TextBox Name="fh" Text="20"/>
+            <TextBox Padding="10,10,10,0" FontWeight="Bold" Foreground="Red" ToolTip="Change it to 10 for correct colors for HP PLC6 Universal Driver">Padding Left</TextBox>
+            <TextBox Name="paddingLeft" Text="50"/>
+            <TextBox Padding="10,10,10,0">Padding Top</TextBox>
+            <TextBox Name="paddingTop" Text="10"/>
+            <TextBox Padding="10,10,10,0">Padding Right</TextBox>
+            <TextBox Name="paddingRight" Text="10"/>
+            <TextBox Padding="10,10,10,0">Padding Bottom</TextBox>
+            <TextBox Name="paddingBottom" Text="10"/>
+        </StackPanel>
+        <DocumentViewer Grid.Column="1" Grid.Row="2" Name="dv"/>
+    </Grid>
+</Window>

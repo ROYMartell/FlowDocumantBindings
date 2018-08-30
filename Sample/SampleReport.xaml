@@ -1,0 +1,31 @@
+﻿<Page x:Class="Sample.SampleReport"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="clr-namespace:FlowElements;assembly=FlowElements"
+      Title="SampleReport">
+    <my:XpsReport IsOptimalParagraphEnabled="True" ColumnWidth="900" FontFamily="Segoe UI" FontSize="14" Name="Report"
+                         x:FieldModifier="public">
+        <my:XpsReport.PageHeader >
+            <DataTemplate>
+                <my:Fragment>
+                    <Section>
+                    </Section>
+                </my:Fragment>
+            </DataTemplate>
+        </my:XpsReport.PageHeader>
+        <my:XpsReport.PageFooter>
+            <DataTemplate>
+                <my:Fragment>
+                    <Section Name="Footer">
+                    </Section>
+                </my:Fragment>
+            </DataTemplate>
+        </my:XpsReport.PageFooter>
+
+        <BlockUIContainer>
+            <Canvas HorizontalAlignment="Stretch">
+                <Image Source="{Binding Path=Source}" Width="650"/>
+            </Canvas>
+        </BlockUIContainer>
+    </my:XpsReport>
+</Page>
